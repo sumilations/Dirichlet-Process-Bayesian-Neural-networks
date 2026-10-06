@@ -1,6 +1,7 @@
 # ==============================================================================
-# Clean Whitelist .gitignore for DP-BNN & DP-DQN Reproducibility Repository
-# Keeps ONLY the core algorithm library, figure generation scripts, and paper source.
+# Clean Code-Only .gitignore for DP-BNN & DP-DQN Repository
+# Excludes paper drafts, LaTeX sources, submission archives, and exploratory logs.
+# Keeps ONLY algorithm code, figure generation scripts, and reproduction tests.
 # ==============================================================================
 
 # Byte-compiled / cache / venvs
@@ -22,13 +23,22 @@ DP-PINNs/
 *.csv
 *.data
 *.trn*
+launch_remote.sh
 
-# Ignore auxiliary research directories, legacy archives, and other submissions
+# Ignore all LaTeX, BibTeX, style files, and paper submission directories
+*.tex
+*.bib
+*.sty
+*.bst
+TMLR_Camera_Ready_Submission/
+aistats_dpps_paper/
+dp_bo_iclr2026_submission/
+verify_tmlr_submission.py
+
+# Ignore auxiliary research directories and legacy archives
 results/
 experiments/
 dp_bo_supplementary_code/
-dp_bo_iclr2026_submission/
-aistats_dpps_paper/
 archive_legacy/
 neural_linear_dp_dqn/
 scripts/
@@ -45,10 +55,6 @@ data/
 *ROADMAP*.md
 REPORT_*.md
 THEORETICAL_*.md
-main-2.tex
-main_tmlr_ORIGINAL_BACKUP.tex
-paper_dp_bnn_rl.tex
-launch_remote.sh
 
 # Ignore miscellaneous root-level scripts, plots, and raw data by default
 /*.py
@@ -57,37 +63,18 @@ launch_remote.sh
 /*.pdf
 
 # ------------------------------------------------------------------------------
-# Whitelist ONLY essential paper figure generation & verification scripts
+# Whitelist ONLY essential algorithm test & figure generation scripts
 # ------------------------------------------------------------------------------
 !/test_reproducibility_suite.py
 !/run_2d_circular_regression_layernorm_ablation.py
 !/plot_Figure_2_TMLR.py
 !/plot_Figure_3_TMLR.py
 !/test_riverswim_std_normal_mlp20.py
-!/verify_tmlr_submission.py
 
 # ------------------------------------------------------------------------------
-# Whitelist ONLY verified figure data files
+# Whitelist ONLY verified benchmark data files needed by the plotting scripts
 # ------------------------------------------------------------------------------
 !/Figure_2_TMLR_data.json
 !/Figure_3_TMLR_data.json
 !/Figure_RiverSwim_Canonical.json
 !/results_option_c_dag_vs_nondag.json
-
-# ------------------------------------------------------------------------------
-# Whitelist ONLY figure image assets embedded in the paper
-# ------------------------------------------------------------------------------
-!/Figure_1_2D_regression_heatmaps_NoLN.pdf
-!/Figure_2_TMLR.pdf
-!/Figure_2_TMLR.png
-!/Figure_3_TMLR.pdf
-!/Figure_3_TMLR.png
-!/Figure_Stochastic_Optimism.pdf
-!/Figure_Stochastic_Optimism.png
-!/galaxy-dp-prior-posterior-new.png
-!/alpha-2-pi_k-k.png
-!/alpha-20-pi_k-Z_k.png
-!/alpha20-pi_k-k.png
-!/alpha50snorDP.png
-!/alpha5snorDP.png
-!/pi_k-Z_k-alpha-2.png
