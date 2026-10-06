@@ -55,7 +55,6 @@ src/dp_reinforce/
 src/envs/
 src/models/
 src/launch_60runs_pool.py
-src/run_cartpole_full_benchmark.py
 unified_dp_dqn/
 
 # Ignore internal roadmaps and scratch reports
