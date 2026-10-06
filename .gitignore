@@ -1,0 +1,48 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+
+# Large media & backups
+*.mp4
+*.gif
+*.zip
+*.tar.gz
+*.log
+scratch/
+DP-PINNs/
+
+# Temporary run directories
+test_alpha_small/
+test_cartpole_decay/
+test_cartpole_dirichlet/
+test_deepsea20_dirichlet/
+test_deepsea20_forward/
+test_deepsea20_rmax1/
+test_deepsea20_unified/
+test_laptop/
+test_pure_vs_multi/
+test_thread/
+test_tmp/
+results_*/
+local_*/
+
+# macOS artifacts
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE / Editor artifacts
+.vscode/
+.idea/
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/

@@ -1,0 +1,58 @@
+{
+  "dataset": "2D Annulus Manifold r in [1.3, 2.45], Cavity r < 1.0",
+  "sigma_aleatoric": 0.3,
+  "with_layernorm": {
+    "Deep Ensembles (NLL)": {
+      "cavity_bald": 0.183,
+      "id_bald": 0.0365,
+      "contrast_ratio": 5.01
+    },
+    "BBB (Variational)": {
+      "cavity_bald": 0.1493,
+      "id_bald": 0.088,
+      "contrast_ratio": 1.7
+    },
+    "BootDQN (Standard)": {
+      "cavity_bald": 0.409,
+      "id_bald": 0.1095,
+      "contrast_ratio": 3.74
+    },
+    "BootDQN + Priors": {
+      "cavity_bald": 0.8025,
+      "id_bald": 0.1338,
+      "contrast_ratio": 6.0
+    },
+    "DP-BNN (Ours)": {
+      "cavity_bald": 1.3734,
+      "id_bald": 0.1857,
+      "contrast_ratio": 7.4
+    }
+  },
+  "without_layernorm": {
+    "Deep Ensembles (NLL)": {
+      "cavity_bald": 0.2004,
+      "id_bald": 0.0282,
+      "contrast_ratio": 7.11
+    },
+    "BBB (Variational)": {
+      "cavity_bald": 0.1097,
+      "id_bald": 0.1577,
+      "contrast_ratio": 0.7
+    },
+    "BootDQN (Standard)": {
+      "cavity_bald": 0.5341,
+      "id_bald": 0.1085,
+      "contrast_ratio": 4.92
+    },
+    "BootDQN + Priors": {
+      "cavity_bald": 0.4627,
+      "id_bald": 0.1227,
+      "contrast_ratio": 3.77
+    },
+    "DP-BNN (Ours)": {
+      "cavity_bald": 1.4072,
+      "id_bald": 0.1597,
+      "contrast_ratio": 8.81
+    }
+  }
+}

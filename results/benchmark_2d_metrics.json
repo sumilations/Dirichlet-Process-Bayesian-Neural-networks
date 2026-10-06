@@ -1,0 +1,47 @@
+{
+  "Deep Ensembles": {
+    "hole_auroc": 1.0,
+    "total_auroc": 0.9791511097526567,
+    "sigma_ring": 0.016543127596378326,
+    "sigma_hole": 0.169477179646492,
+    "sigma_exterior": 0.10073960572481155,
+    "hole_ratio": 10.244567036017692,
+    "ext_ratio": 6.089513916755728
+  },
+  "Vanilla Bootstrap": {
+    "hole_auroc": 0.9970910138248847,
+    "total_auroc": 0.9711334994827422,
+    "sigma_ring": 0.025927027687430382,
+    "sigma_hole": 0.1291477382183075,
+    "sigma_exterior": 0.15004359185695648,
+    "hole_ratio": 4.981201076161896,
+    "ext_ratio": 5.7871497522139315
+  },
+  "BootDQN + Priors": {
+    "hole_auroc": 0.9996291762672811,
+    "total_auroc": 0.9845080174927114,
+    "sigma_ring": 0.029102232307195663,
+    "sigma_hole": 0.21737739443778992,
+    "sigma_exterior": 0.13223710656166077,
+    "hole_ratio": 7.469440561920136,
+    "ext_ratio": 4.5438818976427635
+  },
+  "Variational Inference": {
+    "hole_auroc": 0.2099348358294931,
+    "total_auroc": 0.7365140364901721,
+    "sigma_ring": 0.06899141520261765,
+    "sigma_hole": 0.04496457800269127,
+    "sigma_exterior": 0.11834266036748886,
+    "hole_ratio": 0.6517416387334122,
+    "ext_ratio": 1.715324435945166
+  },
+  "DP-BNN (Ours)": {
+    "hole_auroc": 0.9911794354838709,
+    "total_auroc": 0.983065809273018,
+    "sigma_ring": 0.12837626039981842,
+    "sigma_hole": 0.764216423034668,
+    "sigma_exterior": 1.1423368453979492,
+    "hole_ratio": 5.952941927538411,
+    "ext_ratio": 8.898349600153683
+  }
+}

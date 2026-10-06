@@ -1,0 +1,85 @@
+{
+  "methods": [
+    "Deep Ensembles (NLL)",
+    "Vanilla Bootstrap",
+    "BootDQN + Priors",
+    "Variational Inference",
+    "DP-BNN (Ours)"
+  ],
+  "shared_backbone": "Linear(1->64)->LN->ReLU->Linear(64->64)->LN->ReLU->head",
+  "ensemble_size_K": 10,
+  "disjoint_split_benchmark": [
+    {
+      "gap_ratio": 4.568962097167969,
+      "coverage": 80.75,
+      "crps": 0.2812794660220455,
+      "id_mse": 0.0012308175333106287,
+      "method": "Deep Ensembles (NLL)"
+    },
+    {
+      "gap_ratio": 9.526876449584961,
+      "coverage": 86.75,
+      "crps": 0.20131160956421476,
+      "id_mse": 0.0010525917098242548,
+      "method": "Vanilla Bootstrap"
+    },
+    {
+      "gap_ratio": 21.896743774414062,
+      "coverage": 95.5,
+      "crps": 0.16078888295339222,
+      "id_mse": 0.001031728011992135,
+      "method": "BootDQN + Priors"
+    },
+    {
+      "gap_ratio": 0.8449312448501587,
+      "coverage": 72.25,
+      "crps": 0.3458312307512263,
+      "id_mse": 0.003241369151941741,
+      "method": "Variational Inference"
+    },
+    {
+      "gap_ratio": 12.506232261657715,
+      "coverage": 82.5,
+      "crps": 0.22311308264925106,
+      "id_mse": 0.002213844056200747,
+      "method": "DP-BNN (Ours)"
+    }
+  ],
+  "hidden_oasis_benchmark": [
+    {
+      "oasis_ratio": 8.647372245788574,
+      "coverage": 75.66666666666667,
+      "crps": 0.621736208777656,
+      "id_mse": 0.000928427452585289,
+      "method": "Deep Ensembles (NLL)"
+    },
+    {
+      "oasis_ratio": 18.30008316040039,
+      "coverage": 67.33333333333333,
+      "crps": 0.587693652618593,
+      "id_mse": 0.0009085296437746936,
+      "method": "Vanilla Bootstrap"
+    },
+    {
+      "oasis_ratio": 29.625139236450195,
+      "coverage": 80.66666666666666,
+      "crps": 0.6990978393152506,
+      "id_mse": 0.0007873938240527519,
+      "method": "BootDQN + Priors"
+    },
+    {
+      "oasis_ratio": 1.3973426818847656,
+      "coverage": 61.33333333333333,
+      "crps": 0.7186215637918011,
+      "id_mse": 0.0003141544059885553,
+      "method": "Variational Inference"
+    },
+    {
+      "oasis_ratio": 92.83983612060547,
+      "coverage": 80.0,
+      "crps": 0.509252295996156,
+      "id_mse": 0.001638383607403053,
+      "method": "DP-BNN (Ours)"
+    }
+  ]
+}

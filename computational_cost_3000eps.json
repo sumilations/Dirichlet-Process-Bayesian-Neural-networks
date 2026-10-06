@@ -1,0 +1,62 @@
+{
+  "boot_dqn_rp": {
+    "id": "boot_dqn_rp",
+    "name": "BootDQN + Rand Priors (20 Heads)",
+    "architecture": "20-Head MLP-20",
+    "parameter_count": 8462,
+    "episodes_measured": 3000,
+    "total_steps": 60000,
+    "total_time_seconds": 67.62,
+    "ms_per_episode": 22.54,
+    "ms_per_step": 1.127,
+    "episodes_per_second": 44.4
+  },
+  "bdqn": {
+    "id": "bdqn",
+    "name": "Bayesian Deep Q-Network (BLR)",
+    "architecture": "Single MLP-20 + BLR",
+    "parameter_count": 8462,
+    "episodes_measured": 3000,
+    "total_steps": 60000,
+    "total_time_seconds": 80.56,
+    "ms_per_episode": 26.85,
+    "ms_per_step": 1.343,
+    "episodes_per_second": 37.2
+  },
+  "dp_dqn_bootstrap_limit": {
+    "id": "dp_dqn_bootstrap_limit",
+    "name": "DP-DQN Bootstrap Limit (\u03b1=10\u207b\u2079)",
+    "architecture": "Single MLP-20",
+    "parameter_count": 8562,
+    "episodes_measured": 3000,
+    "total_steps": 60000,
+    "total_time_seconds": 93.32,
+    "ms_per_episode": 31.11,
+    "ms_per_step": 1.555,
+    "episodes_per_second": 32.1
+  },
+  "dp_dqn_dag": {
+    "id": "dp_dqn_dag",
+    "name": "DP-DQN (Downward DAG F0, \u03b1=10)",
+    "architecture": "Single MLP-20",
+    "parameter_count": 8562,
+    "episodes_measured": 3000,
+    "total_steps": 60000,
+    "total_time_seconds": 95.74,
+    "ms_per_episode": 31.91,
+    "ms_per_step": 1.596,
+    "episodes_per_second": 31.3
+  },
+  "dp_dqn_std": {
+    "id": "dp_dqn_std",
+    "name": "DP-DQN (Standard F0, \u03b1=10)",
+    "architecture": "Single MLP-20",
+    "parameter_count": 8562,
+    "episodes_measured": 3000,
+    "total_steps": 60000,
+    "total_time_seconds": 96.42,
+    "ms_per_episode": 32.14,
+    "ms_per_step": 1.607,
+    "episodes_per_second": 31.1
+  }
+}

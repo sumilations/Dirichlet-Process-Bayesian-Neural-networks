@@ -1,0 +1,96 @@
+{
+  "sweep_prior_mean": [
+    {
+      "alpha": 10.0,
+      "prior_mean": 2.0,
+      "prior_std": 1.0,
+      "truncation_K": 50,
+      "steps_per_decision": 2,
+      "mean_regret": 6197.520029211044,
+      "std_err": 314.0630459861861,
+      "mean_outside_opt": 57.525117383844204
+    },
+    {
+      "alpha": 10.0,
+      "prior_mean": 4.0,
+      "prior_std": 1.0,
+      "truncation_K": 50,
+      "steps_per_decision": 2,
+      "mean_regret": 6178.520028209687,
+      "std_err": 566.3916225987346,
+      "mean_outside_opt": 57.85422035411314
+    },
+    {
+      "alpha": 10.0,
+      "prior_mean": 8.0,
+      "prior_std": 1.0,
+      "truncation_K": 50,
+      "steps_per_decision": 2,
+      "mean_regret": 5471.400048589707,
+      "std_err": 310.1285964322168,
+      "mean_outside_opt": 62.9158871133703
+    },
+    {
+      "alpha": 10.0,
+      "prior_mean": 12.0,
+      "prior_std": 1.0,
+      "truncation_K": 50,
+      "steps_per_decision": 2,
+      "mean_regret": 6312.40004529953,
+      "std_err": 235.73285650128133,
+      "mean_outside_opt": 56.81029860225111
+    },
+    {
+      "alpha": 10.0,
+      "prior_mean": 20.0,
+      "prior_std": 1.0,
+      "truncation_K": 50,
+      "steps_per_decision": 2,
+      "mean_regret": 5845.720049333572,
+      "std_err": 348.1553425390323,
+      "mean_outside_opt": 60.20365896463924
+    }
+  ],
+  "sweep_alpha": [
+    {
+      "alpha": 3.0,
+      "prior_mean": 8.0,
+      "prior_std": 1.0,
+      "truncation_K": 50,
+      "steps_per_decision": 2,
+      "mean_regret": 6050.040048551559,
+      "std_err": 360.46618753468755,
+      "mean_outside_opt": 58.60167102508791
+    },
+    {
+      "alpha": 10.0,
+      "prior_mean": 8.0,
+      "prior_std": 1.0,
+      "truncation_K": 50,
+      "steps_per_decision": 2,
+      "mean_regret": 5471.400048589707,
+      "std_err": 310.1285964322168,
+      "mean_outside_opt": 62.9158871133703
+    },
+    {
+      "alpha": 20.0,
+      "prior_mean": 8.0,
+      "prior_std": 1.0,
+      "truncation_K": 50,
+      "steps_per_decision": 2,
+      "mean_regret": 6011.240042734146,
+      "std_err": 679.7172077380292,
+      "mean_outside_opt": 59.119520468892325
+    },
+    {
+      "alpha": 35.0,
+      "prior_mean": 8.0,
+      "prior_std": 1.0,
+      "truncation_K": 50,
+      "steps_per_decision": 2,
+      "mean_regret": 6569.800042009354,
+      "std_err": 494.32167972908013,
+      "mean_outside_opt": 55.0464186813624
+    }
+  ]
+}

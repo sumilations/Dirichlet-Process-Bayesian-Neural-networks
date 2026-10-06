@@ -1,0 +1,12 @@
+{
+  "final_cumulative_regret": {
+    "DP-BNN (Ours)": 290.48567814016053,
+    "BootDQN + Priors": 7717.895070656754,
+    "Deep Ensembles": 7717.385316252531,
+    "BBB (Variational)": 7716.7441937125595,
+    "Eps-Greedy (eps=0.08)": 803.9350828338954
+  },
+  "regret_reduction_vs_ensembles_pct": 96.23595730631192,
+  "regret_reduction_vs_bbb_pct": 96.23564458211739,
+  "memory_network_ratio": "1 vs 10 (10x fewer networks)"
+}

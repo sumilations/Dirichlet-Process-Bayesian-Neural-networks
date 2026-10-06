@@ -1,0 +1,84 @@
+{
+  "n_states": 6,
+  "horizon": 50,
+  "network": "MLP-20 (hidden_dim=20, num_layers=1)",
+  "seeds": [
+    42,
+    101,
+    2024,
+    7,
+    99
+  ],
+  "results": {
+    "DP-DQN (Standard Normal Prior)": {
+      "solved_episodes": [
+        14,
+        53,
+        27,
+        1,
+        42
+      ],
+      "solve_rate": 1.0,
+      "mean_solve_episode": 27.4,
+      "cumulative_return_mean": 474.2,
+      "cumulative_return_std": 68.21040976273343,
+      "runtime_sec": 10.352940082550049
+    },
+    "DP-DQN (Misspecified Prior)": {
+      "solved_episodes": [
+        19,
+        12,
+        18,
+        14,
+        13
+      ],
+      "solve_rate": 1.0,
+      "mean_solve_episode": 15.2,
+      "cumulative_return_mean": 557.7,
+      "cumulative_return_std": 51.11809855618654,
+      "runtime_sec": 10.470635175704956
+    },
+    "Parametric PSRL (Standard Prior)": {
+      "solved_episodes": [
+        8,
+        5,
+        5,
+        12,
+        5
+      ],
+      "solve_rate": 1.0,
+      "mean_solve_episode": 7.0,
+      "cumulative_return_mean": 646.9,
+      "cumulative_return_std": 46.30593914391544,
+      "runtime_sec": 0.23490214347839355
+    },
+    "Parametric PSRL (Misspecified Prior)": {
+      "solved_episodes": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "solve_rate": 0.0,
+      "mean_solve_episode": null,
+      "cumulative_return_mean": 94.49999999999997,
+      "cumulative_return_std": 2.9154759474226504,
+      "runtime_sec": 0.2095940113067627
+    },
+    "Vanilla DQN (eps-greedy)": {
+      "solved_episodes": [
+        8,
+        50,
+        86,
+        32,
+        null
+      ],
+      "solve_rate": 0.8,
+      "mean_solve_episode": 44.0,
+      "cumulative_return_mean": 74.9,
+      "cumulative_return_std": 3.439185950192282,
+      "runtime_sec": 8.844320058822632
+    }
+  }
+}

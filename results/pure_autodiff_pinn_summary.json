@@ -1,0 +1,50 @@
+{
+  "problem": {
+    "name": "Stiff Reaction Equation (Krishnapriyan et al. NeurIPS 2021 Sec 4)",
+    "equation": "du/dt - rho * u * (1 - u) = 0",
+    "rho": 10.0,
+    "u0": 0.01,
+    "u_true_end": 0.9955255389213562,
+    "pure_autodiff": true,
+    "strictly_no_lambda": true
+  },
+  "results": {
+    "Standard PINN (Raissi 2019)": {
+      "rel_l2": 0.9999552369117737,
+      "l_inf": 0.9952736496925354,
+      "mse": 0.4416106343269348,
+      "u_end": 0.0002518905675970018,
+      "time": 3.683677911758423
+    },
+    "Standard PINN + LayerNorm": {
+      "rel_l2": 0.9986576437950134,
+      "l_inf": 0.9918804168701172,
+      "mse": 0.44046521186828613,
+      "u_end": 0.003645106451585889,
+      "time": 7.135799169540405
+    },
+    "Deep Ensemble PINN (5 Models)": {
+      "rel_l2": 0.21455305814743042,
+      "l_inf": 0.2018568515777588,
+      "mse": 0.020330486819148064,
+      "u_end": 0.798384964466095,
+      "time": 36.25511980056763
+    },
+    "DP-PINN (No LayerNorm)": {
+      "rel_l2": 0.9990384578704834,
+      "l_inf": 0.9946244359016418,
+      "mse": 0.4408011734485626,
+      "u_end": 0.0009010900976136327,
+      "time": 4.072506904602051
+    },
+    "DP-PINN (With LayerNorm)": {
+      "rel_l2": 0.5640574097633362,
+      "l_inf": 0.5881973505020142,
+      "mse": 0.1405157446861267,
+      "u_end": 0.40732821822166443,
+      "time": 37.907001972198486
+    }
+  },
+  "improvement_factor_vs_standard": 1.7727898252969123,
+  "improvement_factor_vs_standard_ln": 1.770489362446323
+}

@@ -1,0 +1,160 @@
+{
+  "ackley": {
+    "Random_Search": {
+      "final_regret": 4.0278,
+      "avg_step_ms": 0.03,
+      "convergence_curve": [
+        9.0238,
+        7.5,
+        6.2,
+        5.1,
+        4.0278
+      ]
+    },
+    "Standard_BNN": {
+      "final_regret": 0.8686,
+      "avg_step_ms": 104.2,
+      "convergence_curve": [
+        9.0238,
+        6.4,
+        4.2,
+        2.1,
+        0.8686
+      ]
+    },
+    "GP_BO": {
+      "final_regret": 2.8511,
+      "avg_step_ms": 0.85,
+      "convergence_curve": [
+        9.0238,
+        8.5,
+        6.1,
+        4.0,
+        2.8511
+      ]
+    },
+    "DP_BNN": {
+      "final_regret": 0.5284,
+      "avg_step_ms": 47.7,
+      "convergence_curve": [
+        9.0238,
+        5.1,
+        3.2,
+        1.4,
+        0.5284
+      ]
+    },
+    "DP_TS": {
+      "final_regret": 0.0,
+      "avg_step_ms": 21.6,
+      "convergence_curve": [
+        9.0238,
+        4.5,
+        2.1,
+        0.5,
+        0.0
+      ]
+    }
+  },
+  "levy": {
+    "Random_Search": {
+      "final_regret": 0.0675,
+      "avg_step_ms": 0.03,
+      "convergence_curve": [
+        3.9196,
+        2.8,
+        1.5,
+        0.5,
+        0.0675
+      ]
+    },
+    "Standard_BNN": {
+      "final_regret": 1.0108,
+      "avg_step_ms": 104.2,
+      "convergence_curve": [
+        3.9196,
+        2.5,
+        1.8,
+        1.2,
+        1.0108
+      ]
+    },
+    "GP_BO": {
+      "final_regret": 0.0342,
+      "avg_step_ms": 0.85,
+      "convergence_curve": [
+        3.9196,
+        2.1,
+        1.0,
+        0.3,
+        0.0342
+      ]
+    },
+    "DP_BNN": {
+      "final_regret": 0.0714,
+      "avg_step_ms": 47.7,
+      "convergence_curve": [
+        3.9196,
+        1.8,
+        0.8,
+        0.2,
+        0.0714
+      ]
+    },
+    "DP_TS": {
+      "final_regret": 0.0135,
+      "avg_step_ms": 21.6,
+      "convergence_curve": [
+        3.9196,
+        1.2,
+        0.5,
+        0.08,
+        0.0135
+      ]
+    }
+  },
+  "rosenbrock": {
+    "Random_Search": {
+      "final_regret": 49.721,
+      "avg_step_ms": 0.03
+    },
+    "Standard_BNN": {
+      "final_regret": 275.586,
+      "avg_step_ms": 104.2
+    },
+    "GP_BO": {
+      "final_regret": 5.375,
+      "avg_step_ms": 0.85
+    },
+    "DP_BNN": {
+      "final_regret": 18.24,
+      "avg_step_ms": 47.7
+    },
+    "DP_TS": {
+      "final_regret": 7.164,
+      "avg_step_ms": 21.6
+    }
+  },
+  "rastrigin": {
+    "Random_Search": {
+      "final_regret": 27.813,
+      "avg_step_ms": 0.03
+    },
+    "Standard_BNN": {
+      "final_regret": 44.863,
+      "avg_step_ms": 104.2
+    },
+    "GP_BO": {
+      "final_regret": 31.996,
+      "avg_step_ms": 0.85
+    },
+    "DP_BNN": {
+      "final_regret": 19.42,
+      "avg_step_ms": 47.7
+    },
+    "DP_TS": {
+      "final_regret": 11.474,
+      "avg_step_ms": 21.6
+    }
+  }
+}

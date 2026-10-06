@@ -1,0 +1,191 @@
+[
+  {
+    "size": 10,
+    "seed": 42,
+    "first_discovery": 172,
+    "solved_episode": 196,
+    "final_cum_regret": 175.30900000000008,
+    "elapsed_seconds": 2.318794012069702,
+    "completed": true
+  },
+  {
+    "size": 10,
+    "seed": 43,
+    "first_discovery": 166,
+    "solved_episode": 223,
+    "final_cum_regret": 194.27900000000037,
+    "elapsed_seconds": 2.7687180042266846,
+    "completed": true
+  },
+  {
+    "size": 10,
+    "seed": 44,
+    "first_discovery": 145,
+    "solved_episode": 222,
+    "final_cum_regret": 193.1550000000002,
+    "elapsed_seconds": 2.8408350944519043,
+    "completed": true
+  },
+  {
+    "size": 15,
+    "seed": 42,
+    "first_discovery": 524,
+    "solved_episode": 604,
+    "final_cum_regret": 563.0126666666672,
+    "elapsed_seconds": 13.067059993743896,
+    "completed": true
+  },
+  {
+    "size": 15,
+    "seed": 43,
+    "first_discovery": 121,
+    "solved_episode": 216,
+    "final_cum_regret": 181.37199999999984,
+    "elapsed_seconds": 4.316913843154907,
+    "completed": true
+  },
+  {
+    "size": 15,
+    "seed": 44,
+    "first_discovery": 415,
+    "solved_episode": 537,
+    "final_cum_regret": 506.94466666666756,
+    "elapsed_seconds": 10.995975732803345,
+    "completed": true
+  },
+  {
+    "size": 20,
+    "seed": 42,
+    "first_discovery": 230,
+    "solved_episode": 302,
+    "final_cum_regret": 279.2085000000003,
+    "elapsed_seconds": 9.80635690689087,
+    "completed": true
+  },
+  {
+    "size": 20,
+    "seed": 43,
+    "first_discovery": 299,
+    "solved_episode": 417,
+    "final_cum_regret": 391.7025000000011,
+    "elapsed_seconds": 14.17134404182434,
+    "completed": true
+  },
+  {
+    "size": 20,
+    "seed": 44,
+    "first_discovery": 505,
+    "solved_episode": 597,
+    "final_cum_regret": 576.0555000000003,
+    "elapsed_seconds": 21.42899489402771,
+    "completed": true
+  },
+  {
+    "size": 25,
+    "seed": 42,
+    "first_discovery": 566,
+    "solved_episode": 731,
+    "final_cum_regret": 703.6611999999993,
+    "elapsed_seconds": 36.79595112800598,
+    "completed": true
+  },
+  {
+    "size": 25,
+    "seed": 43,
+    "first_discovery": 753,
+    "solved_episode": 885,
+    "final_cum_regret": 828.2951999999977,
+    "elapsed_seconds": 45.23039889335632,
+    "completed": true
+  },
+  {
+    "size": 25,
+    "seed": 44,
+    "first_discovery": 1087,
+    "solved_episode": 1192,
+    "final_cum_regret": 1166.8419999999987,
+    "elapsed_seconds": 65.40360569953918,
+    "completed": true
+  },
+  {
+    "size": 30,
+    "seed": 42,
+    "first_discovery": 459,
+    "solved_episode": 650,
+    "final_cum_regret": 620.489,
+    "elapsed_seconds": 49.52014517784119,
+    "completed": true
+  },
+  {
+    "size": 30,
+    "seed": 43,
+    "first_discovery": 1190,
+    "solved_episode": 1295,
+    "final_cum_regret": 1250.831333333335,
+    "elapsed_seconds": 129.38340401649475,
+    "completed": true
+  },
+  {
+    "size": 30,
+    "seed": 44,
+    "first_discovery": 1303,
+    "solved_episode": 1363,
+    "final_cum_regret": 1340.8236666666648,
+    "elapsed_seconds": 139.48737788200378,
+    "completed": true
+  },
+  {
+    "size": 40,
+    "seed": 42,
+    "first_discovery": 2561,
+    "solved_episode": 2601,
+    "final_cum_regret": 2572.2094999999845,
+    "elapsed_seconds": 498.3477921485901,
+    "completed": true
+  },
+  {
+    "size": 40,
+    "seed": 43,
+    "first_discovery": null,
+    "solved_episode": 3000,
+    "final_cum_regret": 2991.0997499999726,
+    "elapsed_seconds": 558.7657871246338,
+    "completed": true
+  },
+  {
+    "size": 40,
+    "seed": 44,
+    "first_discovery": 1773,
+    "solved_episode": 1953,
+    "final_cum_regret": 1884.2307499999972,
+    "elapsed_seconds": 386.9228992462158,
+    "completed": true
+  },
+  {
+    "size": 50,
+    "seed": 42,
+    "first_discovery": null,
+    "solved_episode": 3000,
+    "final_cum_regret": 2992.144999999992,
+    "elapsed_seconds": 754.2440347671509,
+    "completed": true
+  },
+  {
+    "size": 50,
+    "seed": 43,
+    "first_discovery": null,
+    "solved_episode": 3000,
+    "final_cum_regret": 2990.9515999999444,
+    "elapsed_seconds": 748.7990851402283,
+    "completed": true
+  },
+  {
+    "size": 50,
+    "seed": 44,
+    "first_discovery": null,
+    "solved_episode": 3000,
+    "final_cum_regret": 2992.1634000000045,
+    "elapsed_seconds": 741.9586791992188,
+    "completed": true
+  }
+]

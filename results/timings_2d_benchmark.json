@@ -1,0 +1,16 @@
+{
+  "with_ln": {
+    "Deep Ensembles (NLL)": 10.650604009628296,
+    "BBB (Variational)": 2.5923879146575928,
+    "BootDQN (Standard)": 8.922362804412842,
+    "BootDQN + Priors": 8.93844985961914,
+    "DP-BNN (Ours)": 9.541944026947021
+  },
+  "no_ln": {
+    "Deep Ensembles (NLL)": 6.891324043273926,
+    "BBB (Variational)": 2.089040756225586,
+    "BootDQN (Standard)": 5.715234041213989,
+    "BootDQN + Priors": 5.432366132736206,
+    "DP-BNN (Ours)": 5.923649072647095
+  }
+}

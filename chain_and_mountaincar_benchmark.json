@@ -1,0 +1,79 @@
+{
+  "seeds": [
+    42,
+    101,
+    2024,
+    7,
+    99
+  ],
+  "chain_results": {
+    "DP-DQN (Ours)": {
+      "solved_episodes": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "final_regret_mean": 2217.4,
+      "runtime_sec": 7.38920783996582
+    },
+    "BootDQN-RP": {
+      "solved_episodes": [
+        null,
+        6,
+        6,
+        17,
+        3
+      ],
+      "final_regret_mean": 9861.8,
+      "runtime_sec": 7.717990159988403
+    },
+    "Vanilla DQN": {
+      "solved_episodes": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "final_regret_mean": 9901.6,
+      "runtime_sec": 0.39436960220336914
+    }
+  },
+  "mountaincar_results": {
+    "DP-DQN (Ours)": {
+      "solved_episodes": [
+        44,
+        13,
+        4,
+        16,
+        7
+      ],
+      "final_10_return_mean": -145.42000000000002,
+      "runtime_sec": 29.7453191280365
+    },
+    "BootDQN-RP": {
+      "solved_episodes": [
+        17,
+        40,
+        6,
+        29,
+        17
+      ],
+      "final_10_return_mean": -193.62,
+      "runtime_sec": 112.22424983978271
+    },
+    "Vanilla DQN": {
+      "solved_episodes": [
+        54,
+        45,
+        45,
+        46,
+        51
+      ],
+      "final_10_return_mean": -157.78,
+      "runtime_sec": 42.51937222480774
+    }
+  }
+}

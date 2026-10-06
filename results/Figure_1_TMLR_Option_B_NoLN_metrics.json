@@ -1,0 +1,27 @@
+{
+  "Deep Ensembles (NLL)": {
+    "cavity_bald": 0.2004,
+    "id_bald": 0.0282,
+    "contrast_ratio": 7.11
+  },
+  "BBB (Variational)": {
+    "cavity_bald": 0.1097,
+    "id_bald": 0.1577,
+    "contrast_ratio": 0.7
+  },
+  "BootDQN (Standard)": {
+    "cavity_bald": 0.5413,
+    "id_bald": 0.1027,
+    "contrast_ratio": 5.27
+  },
+  "BootDQN + Priors": {
+    "cavity_bald": 0.577,
+    "id_bald": 0.1221,
+    "contrast_ratio": 4.72
+  },
+  "DP-BNN (Ours)": {
+    "cavity_bald": 1.4072,
+    "id_bald": 0.1597,
+    "contrast_ratio": 8.81
+  }
+}

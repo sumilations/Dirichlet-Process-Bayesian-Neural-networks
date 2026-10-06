@@ -1,0 +1,42 @@
+{
+  "benchmark": "CartPole-v1",
+  "num_episodes": 200,
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "runtime_seconds": 38.48843789100647,
+  "models": {
+    "DP_BNN_REINFORCE_Full": {
+      "label": "DP-BNN REINFORCE (Full: TS + DP-PG + LN)",
+      "final_return_mean": 12.569999999999999,
+      "final_return_std": 5.543067742685452,
+      "solved_rate": 0.0,
+      "mean_solved_ep": null
+    },
+    "DP_BNN_REINFORCE_NoTS": {
+      "label": "DP-BNN REINFORCE (DP-PG + LN, No TS)",
+      "final_return_mean": 13.14,
+      "final_return_std": 2.9624989451474915,
+      "solved_rate": 0.0,
+      "mean_solved_ep": null
+    },
+    "Standard_REINFORCE_Baseline": {
+      "label": "Standard REINFORCE + Baseline (Williams 1992)",
+      "final_return_mean": 295.32,
+      "final_return_std": 49.181669349463945,
+      "solved_rate": 0.0,
+      "mean_solved_ep": null
+    },
+    "Vanilla_REINFORCE": {
+      "label": "Vanilla REINFORCE (No Baseline, No DP)",
+      "final_return_mean": 266.62,
+      "final_return_std": 29.5345154014756,
+      "solved_rate": 0.0,
+      "mean_solved_ep": null
+    }
+  }
+}

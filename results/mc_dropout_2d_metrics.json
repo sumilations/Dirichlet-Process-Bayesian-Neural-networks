@@ -1,0 +1,36 @@
+{
+  "with_layernorm": {
+    "MC Dropout (p=0.05)": {
+      "cavity_bald": 0.061,
+      "id_bald": 0.0863,
+      "contrast_ratio": 0.71
+    },
+    "MC Dropout (p=0.1)": {
+      "cavity_bald": 0.1191,
+      "id_bald": 0.0831,
+      "contrast_ratio": 1.43
+    },
+    "MC Dropout (p=0.2)": {
+      "cavity_bald": 0.1646,
+      "id_bald": 0.1294,
+      "contrast_ratio": 1.27
+    }
+  },
+  "without_layernorm": {
+    "MC Dropout (p=0.05)": {
+      "cavity_bald": 0.2744,
+      "id_bald": 0.11,
+      "contrast_ratio": 2.49
+    },
+    "MC Dropout (p=0.1)": {
+      "cavity_bald": 0.2847,
+      "id_bald": 0.1213,
+      "contrast_ratio": 2.35
+    },
+    "MC Dropout (p=0.2)": {
+      "cavity_bald": 0.321,
+      "id_bald": 0.138,
+      "contrast_ratio": 2.33
+    }
+  }
+}

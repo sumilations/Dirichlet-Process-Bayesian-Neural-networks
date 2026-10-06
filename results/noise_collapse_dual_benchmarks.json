@@ -1,0 +1,96 @@
+{
+  "benchmark_1_heteroscedastic_trap": {
+    "Deep Ensembles (NLL)": {
+      "gap_auroc": 0.4740740740740741,
+      "void_auroc": 0.9954761904761905,
+      "ood_auroc": 0.7484962406015038,
+      "mean_bald_id": 0.031190423294901848,
+      "mean_bald_gap": 0.030549993738532066,
+      "mean_bald_void": 0.18678905069828033,
+      "peak_bald_gap": 0.06036024168133736
+    },
+    "BBB (MFVI)": {
+      "gap_auroc": 0.07896825396825397,
+      "void_auroc": 0.5930952380952381,
+      "ood_auroc": 0.3495614035087719,
+      "mean_bald_id": 0.009342828765511513,
+      "mean_bald_gap": 0.005209985189139843,
+      "mean_bald_void": 0.007827292196452618,
+      "peak_bald_gap": 0.006275446619838476
+    },
+    "BootDQN (Bootstrap)": {
+      "gap_auroc": 0.9555555555555556,
+      "void_auroc": 0.9998809523809524,
+      "ood_auroc": 0.9788847117794486,
+      "mean_bald_id": 0.04541001841425896,
+      "mean_bald_gap": 0.4336816072463989,
+      "mean_bald_void": 0.3708816468715668,
+      "peak_bald_gap": 0.6901885271072388
+    },
+    "BootDQN + RP": {
+      "gap_auroc": 0.9988095238095238,
+      "void_auroc": 0.8442857142857143,
+      "ood_auroc": 0.9174812030075188,
+      "mean_bald_id": 0.045623548328876495,
+      "mean_bald_gap": 0.3023170530796051,
+      "mean_bald_void": 0.336710661649704,
+      "peak_bald_gap": 0.3702550530433655
+    },
+    "DP-BNN (Ours)": {
+      "gap_auroc": 1.0,
+      "void_auroc": 0.935952380952381,
+      "ood_auroc": 0.9662907268170426,
+      "mean_bald_id": 0.04515601322054863,
+      "mean_bald_gap": 0.5248197913169861,
+      "mean_bald_void": 0.2477153092622757,
+      "peak_bald_gap": 0.6772530674934387
+    }
+  },
+  "benchmark_2_cauchy_outliers": {
+    "Deep Ensembles (NLL)": {
+      "gap_auroc": 1.0,
+      "void_auroc": 0.745,
+      "ood_auroc": 0.8657894736842106,
+      "mean_bald_id": 0.20521530508995056,
+      "mean_bald_gap": 1.6917376518249512,
+      "mean_bald_void": 0.6395686864852905,
+      "peak_bald_gap": 2.2454514503479004
+    },
+    "BBB (MFVI)": {
+      "gap_auroc": 0.13915343915343914,
+      "void_auroc": 0.7407142857142858,
+      "ood_auroc": 0.4557644110275689,
+      "mean_bald_id": 0.2000461220741272,
+      "mean_bald_gap": 0.09308116883039474,
+      "mean_bald_void": 0.28297021985054016,
+      "peak_bald_gap": 0.11094138026237488
+    },
+    "BootDQN (Bootstrap)": {
+      "gap_auroc": 0.9212962962962963,
+      "void_auroc": 0.8035714285714286,
+      "ood_auroc": 0.8593358395989975,
+      "mean_bald_id": 0.5382595658302307,
+      "mean_bald_gap": 1.686752200126648,
+      "mean_bald_void": 0.9424120187759399,
+      "peak_bald_gap": 2.0984058380126953
+    },
+    "BootDQN + RP": {
+      "gap_auroc": 0.8742063492063492,
+      "void_auroc": 0.6819047619047619,
+      "ood_auroc": 0.7729949874686717,
+      "mean_bald_id": 0.6533222794532776,
+      "mean_bald_gap": 1.6749776601791382,
+      "mean_bald_void": 0.8773794770240784,
+      "peak_bald_gap": 1.8912336826324463
+    },
+    "DP-BNN (Ours)": {
+      "gap_auroc": 0.8921957671957672,
+      "void_auroc": 0.9385714285714286,
+      "ood_auroc": 0.9166040100250626,
+      "mean_bald_id": 0.5153445601463318,
+      "mean_bald_gap": 1.3863428831100464,
+      "mean_bald_void": 1.692164659500122,
+      "peak_bald_gap": 1.937670111656189
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "dataset": "x*sin(x) + noise",
+  "sigma_eps": 0.25,
+  "models": {
+    "Deep Ensembles (NLL)": {
+      "gap_auroc": 1.0,
+      "void_auroc": 0.8169047619047619,
+      "ood_auroc": 0.9036340852130326,
+      "mean_bald_id": 0.049033261835575104,
+      "mean_bald_gap": 0.9737238883972168,
+      "peak_bald_gap": 1.2857297658920288,
+      "contrast": 26.221578078728033
+    },
+    "BBB (Variational)": {
+      "gap_auroc": 0.3689153439153439,
+      "void_auroc": 0.5488095238095239,
+      "ood_auroc": 0.4635964912280702,
+      "mean_bald_id": 0.15162794291973114,
+      "mean_bald_gap": 0.10217641294002533,
+      "peak_bald_gap": 0.11309362202882767,
+      "contrast": 0.7458626186735978
+    },
+    "BootDQN (Standard)": {
+      "gap_auroc": 1.0,
+      "void_auroc": 1.0,
+      "ood_auroc": 1.0,
+      "mean_bald_id": 0.07149043679237366,
+      "mean_bald_gap": 0.8894515633583069,
+      "peak_bald_gap": 1.0696805715560913,
+      "contrast": 14.962566602258262
+    },
+    "BootDQN + Priors": {
+      "gap_auroc": 1.0,
+      "void_auroc": 0.8491666666666666,
+      "ood_auroc": 0.9206140350877193,
+      "mean_bald_id": 0.08087308704853058,
+      "mean_bald_gap": 0.6366235017776489,
+      "peak_bald_gap": 0.7607583403587341,
+      "contrast": 9.406815963808285
+    },
+    "DP-BNN (Ours)": {
+      "gap_auroc": 0.9935185185185185,
+      "void_auroc": 1.0,
+      "ood_auroc": 0.9969298245614036,
+      "mean_bald_id": 0.20916666090488434,
+      "mean_bald_gap": 0.9781482219696045,
+      "peak_bald_gap": 1.4194616079330444,
+      "contrast": 6.7862704980303725
+    }
+  }
+}
