@@ -38,8 +38,8 @@ Building on this data-space prior, **DP-DQN** implements pure Thompson Sampling 
 
 ### Setup
 ```bash
-git clone https://github.com/vashishthasumit/DP-BNN.git
-cd DP-BNN
+git clone https://github.com/sumilations/Dirichlet-Process-Bayesian-Neural-networks.git
+cd Dirichlet-Process-Bayesian-Neural-networks
 pip install -r requirements.txt
 ```
 
