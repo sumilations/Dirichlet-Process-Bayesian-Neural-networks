@@ -54,7 +54,7 @@ src/bayesian_distributional_rl/
 src/dp_reinforce/
 src/envs/
 src/models/
-src/launch_60runs_pool.py
+src/*.py
 unified_dp_dqn/
 
 # Ignore internal roadmaps and scratch reports
