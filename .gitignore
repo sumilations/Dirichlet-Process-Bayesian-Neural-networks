@@ -1,7 +1,6 @@
 # ==============================================================================
-# Clean Code-Only .gitignore for DP-BNN & DP-DQN Repository
-# Excludes paper drafts, LaTeX sources, submission archives, and exploratory logs.
-# Keeps ONLY algorithm code, figure generation scripts, and reproduction tests.
+# Clean Minimal .gitignore for DP-BNN & DP-DQN Repository
+# Tracks ONLY core DP-DQN library, figure generation scripts, and reproduction tests.
 # ==============================================================================
 
 # Byte-compiled / cache / venvs
@@ -49,6 +48,15 @@ test_*/
 results_*/
 local_*/
 data/
+
+# Ignore auxiliary research modules in src/ and unified_dp_dqn/
+src/bayesian_distributional_rl/
+src/dp_reinforce/
+src/envs/
+src/models/
+src/launch_60runs_pool.py
+src/run_cartpole_full_benchmark.py
+unified_dp_dqn/
 
 # Ignore internal roadmaps and scratch reports
 *_ROADMAP.md

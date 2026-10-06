@@ -115,6 +115,61 @@ class GymEnvWrapper(EnvWrapper):
         return np.array(obs, dtype=np.float32).flatten(), float(reward), done, info
 
 
+class RiverSwimEnv:
+    """Canonical RiverSwim Environment (Strehl & Littman, 2008; Osband et al., 2013)."""
+
+    def __init__(self, n_states: int = 6, max_steps: int = 40, seed: Optional[int] = None):
+        self.n_states = n_states
+        self.num_states = n_states
+        self.num_actions = 2
+        self.max_steps = max_steps
+        self.rng = np.random.default_rng(seed)
+        self.current_state = 0
+        self.current_step = 0
+
+    def reset(self) -> int:
+        self.current_state = 0
+        self.current_step = 0
+        return self.current_state
+
+    def step(self, action: int) -> Tuple[int, float, bool, dict]:
+        self.current_step += 1
+        s = self.current_state
+        r = 0.0
+
+        if action == 0:
+            if s == 0:
+                s_next = 0
+                r = 0.05
+            else:
+                s_next = s - 1
+                r = 0.0
+        else:
+            if s == 0:
+                s_next = 1 if self.rng.random() < 0.6 else 0
+                r = 0.0
+            elif s == self.n_states - 1:
+                if self.rng.random() < 0.6:
+                    s_next = self.n_states - 1
+                    r = 1.0
+                else:
+                    s_next = self.n_states - 2
+                    r = 0.0
+            else:
+                p = self.rng.random()
+                if p < 0.1:
+                    s_next = s - 1
+                elif p < 0.7:
+                    s_next = s
+                else:
+                    s_next = s + 1
+                r = 0.0
+
+        self.current_state = s_next
+        done = (self.current_step >= self.max_steps)
+        return s_next, r, done, {}
+
+
 def make_env(env_name: str, **kwargs) -> EnvWrapper:
     """Factory creating standardized environment wrapper.
 

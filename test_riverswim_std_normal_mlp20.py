@@ -15,7 +15,7 @@ import numpy as np
 import torch
 torch.set_num_threads(1)
 
-from src.bayesian_distributional_rl.environments import RiverSwimEnv
+from src.dp_dqn.environments import RiverSwimEnv
 from src.dp_dqn.agent import DPDQNAgent
 from src.dp_dqn.config import DPDQNConfig
 from src.dp_dqn.base_measures import BaseMeasure

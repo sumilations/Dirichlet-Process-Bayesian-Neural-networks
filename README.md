@@ -71,9 +71,9 @@ python test_reproducibility_suite.py
 | :--- | :--- | :--- | :--- |
 | **Figure 1** | 2D Annular Manifold Regression (BALD) | `python run_2d_circular_regression_layernorm_ablation.py` | `Figure_1_2D_regression_heatmaps_NoLN.pdf` |
 | **Figure 2** | DeepSea Regret & 30-Size Scaling Suite | `python plot_Figure_2_TMLR.py` | `Figure_2_TMLR.png` / `.pdf` |
+| **Figure 3** | DeepSea-20 Regret Comparison | `python plot_Figure_3_TMLR.py` | `Figure_3_TMLR.png` / `.pdf` |
 | **Figure 4a** | Canonical RiverSwim-6 ($\mathcal{N}(0, 1)$ Prior) | `python test_riverswim_std_normal_mlp20.py` | `Figure_RiverSwim_Canonical.png` |
-| **Table 1** | Cross-Domain Summary (RiverSwim, Chain, MC, Wheel) | `python test_reproducibility_suite.py` | Console Summary Audit |
-| **Table 2** | Computational Complexity & Latency Profiling | `python run_strictly_matched_dp_vs_bootdqn.py` | Runtime & Memory Table |
+| **Verification Suite** | Cross-Domain Summary (RiverSwim, Chain, DeepSea) | `python test_reproducibility_suite.py` | Automated 4-test verification |
 
 ---
 
@@ -84,20 +84,21 @@ python test_reproducibility_suite.py
 ├── requirements.txt                    # Minimal dependencies
 ├── test_reproducibility_suite.py       # Turnkey 4-benchmark test suite (all paper claims)
 ├── plot_Figure_2_TMLR.py               # Generates Figure 2 (DeepSea-20 + Scaling suite)
+├── plot_Figure_3_TMLR.py               # Generates Figure 3 (DeepSea-20 Regret Comparison)
 ├── run_2d_circular_regression_layernorm_ablation.py # Generates Figure 1 (Annular manifold)
 ├── test_riverswim_std_normal_mlp20.py  # RiverSwim-6 with zero jackpot bias N(0, 1) prior
-├── main_tmlr.tex                       # Complete LaTeX source of TMLR paper
 ├── Figure_2_TMLR_data.json             # 180-run scaling data across 30 grid points
 ├── Figure_3_TMLR_data.json             # DeepSea-20 cumulative regret benchmark data
-├── src/
-│   └── dp_dqn/
-│       ├── agent.py                    # Core Unified DP-DQN Agent (Algorithm 2)
-│       ├── config.py                   # Configuration dataclass
-│       ├── networks.py                 # Single living Q-network with LayerNorm
-│       ├── sampler.py                  # Stick-breaking Dirichlet Process posterior sampler
-│       ├── base_measures.py            # Domain base measures F_0 (Uniform, Gaussian, etc.)
-│       └── environments.py             # Benchmark environments (DeepSea, RiverSwim, etc.)
-└── unified_dp_dqn/                     # Modular lightweight library package
+├── Figure_RiverSwim_Canonical.json     # RiverSwim-6 benchmark data
+├── results_option_c_dag_vs_nondag.json # DeepSea Option C verified run data
+└── src/
+    └── dp_dqn/
+        ├── agent.py                    # Core Unified DP-DQN Agent (Algorithm 2)
+        ├── config.py                   # Configuration dataclass
+        ├── networks.py                 # Single living Q-network with LayerNorm
+        ├── sampler.py                  # Stick-breaking Dirichlet Process posterior sampler
+        ├── base_measures.py            # Domain base measures F_0 (Uniform, Gaussian, etc.)
+        └── environments.py             # Environments (DeepSea, RiverSwim, Gym wrappers)
 ```
 
 ---
