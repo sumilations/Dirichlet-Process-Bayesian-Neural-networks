@@ -1,6 +1,0 @@
-Algorithm,Architecture,Solved Rate,Mean T_disc,Std T_disc,Mean T_learn,Std T_learn,Consolidation Delay,Mean Regret,Std Regret,Median Regret,IQM Regret,Cost (1st 3k eps),Throughput (1st 3k eps)
-"DP-DQN (Downward DAG F0, α=10)",Single MLP-20,10/10 (100%),2336.0,1244.5,2695.8,1404.4,359.8,2613.8,1385.9,2389.5,2400.4,31.91 ms/ep,31.3 eps/s
-BootDQN + Rand Priors (20 Heads),20-Head MLP-20,10/10 (100%),4254.1,547.5,5210.2,603.7,956.1,4922.1,581.5,4806.9,4894.3,22.54 ms/ep,44.4 eps/s
-"DP-DQN (Standard F0, α=10)",Single MLP-20,10/10 (100%),4573.2,1916.0,5317.7,1804.3,744.5,5231.6,1799.4,5119.1,5102.5,32.14 ms/ep,31.1 eps/s
-Bayesian Deep Q-Network (BLR),Single MLP-20,0/10 (0%),Timeout,—,Timeout,—,—,9959.3,5.2,9959.2,9958.9,26.85 ms/ep,37.2 eps/s
-DP-DQN Bootstrap Limit (α=10⁻⁹),Single MLP-20,0/10 (0%),Timeout,—,Timeout,—,—,9937.5,9.4,9936.6,9936.5,31.11 ms/ep,32.1 eps/s

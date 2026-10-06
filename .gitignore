@@ -1,48 +1,93 @@
-# Byte-compiled / optimized / DLL files
+# ==============================================================================
+# Clean Whitelist .gitignore for DP-BNN & DP-DQN Reproducibility Repository
+# Keeps ONLY the core algorithm library, figure generation scripts, and paper source.
+# ==============================================================================
+
+# Byte-compiled / cache / venvs
 __pycache__/
 *.py[cod]
 *$py.class
-
-# Virtual environments
 .venv/
 env/
 venv/
-ENV/
-
-# Large media & backups
-*.mp4
-*.gif
-*.zip
-*.tar.gz
-*.log
 scratch/
 DP-PINNs/
+.DS_Store
+*.log
+*.zip
+*.tar.gz
+*.mp4
+*.gif
+*.npz
+*.csv
+*.data
+*.trn*
 
-# Temporary run directories
-test_alpha_small/
-test_cartpole_decay/
-test_cartpole_dirichlet/
-test_deepsea20_dirichlet/
-test_deepsea20_forward/
-test_deepsea20_rmax1/
-test_deepsea20_unified/
-test_laptop/
-test_pure_vs_multi/
-test_thread/
-test_tmp/
+# Ignore auxiliary research directories, legacy archives, and other submissions
+results/
+experiments/
+dp_bo_supplementary_code/
+dp_bo_iclr2026_submission/
+aistats_dpps_paper/
+archive_legacy/
+neural_linear_dp_dqn/
+scripts/
+tests/
+test_*/
+!test_reproducibility_suite.py
+!test_riverswim_std_normal_mlp20.py
 results_*/
 local_*/
+data/
 
-# macOS artifacts
-.DS_Store
-.AppleDouble
-.LSOverride
+# Ignore internal roadmaps and scratch reports
+*_ROADMAP.md
+*ROADMAP*.md
+REPORT_*.md
+THEORETICAL_*.md
+main-2.tex
+main_tmlr_ORIGINAL_BACKUP.tex
+paper_dp_bnn_rl.tex
+launch_remote.sh
 
-# IDE / Editor artifacts
-.vscode/
-.idea/
+# Ignore miscellaneous root-level scripts, plots, and raw data by default
+/*.py
+/*.json
+/*.png
+/*.pdf
 
-# Pytest / coverage
-.pytest_cache/
-.coverage
-htmlcov/
+# ------------------------------------------------------------------------------
+# Whitelist ONLY essential paper figure generation & verification scripts
+# ------------------------------------------------------------------------------
+!/test_reproducibility_suite.py
+!/run_2d_circular_regression_layernorm_ablation.py
+!/plot_Figure_2_TMLR.py
+!/plot_Figure_3_TMLR.py
+!/test_riverswim_std_normal_mlp20.py
+!/verify_tmlr_submission.py
+
+# ------------------------------------------------------------------------------
+# Whitelist ONLY verified figure data files
+# ------------------------------------------------------------------------------
+!/Figure_2_TMLR_data.json
+!/Figure_3_TMLR_data.json
+!/Figure_RiverSwim_Canonical.json
+!/results_option_c_dag_vs_nondag.json
+
+# ------------------------------------------------------------------------------
+# Whitelist ONLY figure image assets embedded in the paper
+# ------------------------------------------------------------------------------
+!/Figure_1_2D_regression_heatmaps_NoLN.pdf
+!/Figure_2_TMLR.pdf
+!/Figure_2_TMLR.png
+!/Figure_3_TMLR.pdf
+!/Figure_3_TMLR.png
+!/Figure_Stochastic_Optimism.pdf
+!/Figure_Stochastic_Optimism.png
+!/galaxy-dp-prior-posterior-new.png
+!/alpha-2-pi_k-k.png
+!/alpha-20-pi_k-Z_k.png
+!/alpha20-pi_k-k.png
+!/alpha50snorDP.png
+!/alpha5snorDP.png
+!/pi_k-Z_k-alpha-2.png
