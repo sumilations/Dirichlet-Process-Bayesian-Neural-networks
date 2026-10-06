@@ -9,9 +9,9 @@ class DPDQNConfig:
     """Hyperparameter and environment configuration for Unified DP-DQN."""
 
     # Environment
-    env_name: str = "cartpole_swingup"  # "cartpole_swingup", "deep_sea", "gym:<env_id>"
-    state_dim: int = 6                  # Observation dimension (auto-inferred if env supports it)
-    action_dim: int = 3                 # Discrete action count (auto-inferred if env supports it)
+    env_name: str = "deep_sea"          # "deep_sea", "riverswim", "gym:<env_id>"
+    state_dim: int = 100                # Observation dimension (auto-inferred if env supports it)
+    action_dim: int = 2                 # Discrete action count (auto-inferred if env supports it)
     deep_sea_size: int = 10             # N for Deep Sea grid (state_dim = N*N, action_dim = 2)
 
     # Neural Network Architecture
@@ -24,7 +24,7 @@ class DPDQNConfig:
     alpha: float = 15.0                 # Concentration parameter: F ~ DP(alpha, F_0)
     batch_size: int = 64                # Minibatch size M for stick-breaking
     candidate_batch_size: int = 256     # Maximum empirical replay transitions to pool
-    base_measure: str = "default"       # "default", "cartpole", "deep_sea", "gaussian", "zero", or custom instance
+    base_measure: str = "deep_sea"      # "deep_sea", "gaussian", "zero", or custom instance
     prior_reward_mean: float = 0.1      # Optimistic target reward scale in F_0 (default: 0.1)
     prior_reward_std: float = 0.05      # Optimistic target reward std in F_0 (default: 0.05)
     contraction_C: Optional[float] = None  # Scale factor C for posterior contraction (Method 1). If None, no contraction.

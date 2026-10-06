@@ -52,35 +52,7 @@ class DeepSeaWrapper(EnvWrapper):
         return obs, reward, done, info
 
 
-class BSuiteCartpoleEnvWrapper(EnvWrapper):
-    """Wrapper for bsuite Cartpole Swingup."""
 
-    def __init__(self, bsuite_id: str = "cartpole_swingup/0"):
-        try:
-            import bsuite
-            env = bsuite.load_from_id(bsuite_id)
-        except ImportError:
-            raise ImportError("bsuite is required for Cartpole Swingup. Install with `pip install bsuite`.")
-
-        action_dim = env.action_spec().num_values
-        state_dim = int(np.prod(env.observation_spec().shape))
-        super().__init__(env, state_dim, action_dim)
-
-    def reset(self) -> np.ndarray:
-        timestep = self.raw_env.reset()
-        return np.array(timestep.observation, dtype=np.float32).flatten()
-
-    def step(self, action: int) -> Tuple[np.ndarray, float, bool, dict]:
-        timestep = self.raw_env.step(int(action))
-        obs = np.array(timestep.observation, dtype=np.float32).flatten()
-        reward = float(timestep.reward or 0.0)
-        done = bool(timestep.last())
-        info = {
-            "discount": float(timestep.discount if timestep.discount is not None else 1.0),
-            "step_type": timestep.step_type,
-            "is_upright": bool(obs[3] > 0.0) if len(obs) > 3 else False,
-        }
-        return obs, reward, done, info
 
 
 class GymEnvWrapper(EnvWrapper):
@@ -175,8 +147,7 @@ def make_env(env_name: str, **kwargs) -> EnvWrapper:
 
     Supported:
     - 'deep_sea' or 'deepsea': kwargs can include size=10, seed=42
-    - 'cartpole_swingup' or 'cartpole': kwargs can include bsuite_id='cartpole_swingup/0'
-    - 'gym:<env_id>': e.g. 'gym:CartPole-v1', 'gym:MountainCar-v0', 'gym:Acrobot-v1'
+    - 'gym:<env_id>': e.g. 'gym:MountainCar-v0', 'gym:Acrobot-v1'
     """
     name = str(env_name).lower().strip()
 
@@ -185,9 +156,6 @@ def make_env(env_name: str, **kwargs) -> EnvWrapper:
         seed = kwargs.get("seed", 42)
         mapping_seed = kwargs.get("mapping_seed", seed)
         return DeepSeaWrapper(size=size, seed=seed, mapping_seed=mapping_seed)
-    elif name in ("cartpole_swingup", "cartpole"):
-        bsuite_id = kwargs.get("bsuite_id", "cartpole_swingup/0")
-        return BSuiteCartpoleEnvWrapper(bsuite_id=bsuite_id)
     elif name.startswith("gym:"):
         gym_id = env_name.split("gym:", 1)[1]
         return GymEnvWrapper(gym_id)

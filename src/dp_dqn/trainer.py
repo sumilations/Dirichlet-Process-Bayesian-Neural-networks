@@ -53,8 +53,6 @@ def train(
         if bm_name == "default":
             if "deep_sea" in config.env_name.lower():
                 bm_name = "deep_sea"
-            elif "cartpole" in config.env_name.lower():
-                bm_name = "cartpole"
             else:
                 bm_name = "gaussian"
 
