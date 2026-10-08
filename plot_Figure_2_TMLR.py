@@ -36,8 +36,11 @@ plt.rcParams.update({
     "grid.linestyle": "--",
 })
 
-BASE_DIR = "/Users/sumitvashishtha/Desktop/DP-BNNs"
-ARTIFACT_DIR = "/Users/sumitvashishtha/.gemini/antigravity/brain/f3853f6f-e164-4df3-ac40-df17bbc1fc86"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+ARTIFACT_DIR = os.environ.get(
+    "ARTIFACT_DIR",
+    "/Users/sumitvashishtha/.gemini/antigravity/brain/f3853f6f-e164-4df3-ac40-df17bbc1fc86",
+)
 
 # ------------------------------------------------------------------------------
 # 1. Load Data for Left Panel (DeepSea-20 Regret Comparison)
@@ -229,12 +232,14 @@ if os.path.exists(dest_dir):
             shutil.copy2(src_f, dst_f)
             print(f"Copied to camera ready: {dst_f}")
 
-# Also copy to artifact dir for viewing
-for f in ["Figure_2_TMLR.png", "Figure_3_TMLR.png"]:
-    src_f = os.path.join(BASE_DIR, f)
-    dst_f = os.path.join(ARTIFACT_DIR, f)
-    import shutil
-    shutil.copy2(src_f, dst_f)
-    print(f"Copied to artifacts: {dst_f}")
+# Also copy to artifact dir for viewing if present
+if os.path.isdir(ARTIFACT_DIR):
+    for f in ["Figure_2_TMLR.png", "Figure_3_TMLR.png"]:
+        src_f = os.path.join(BASE_DIR, f)
+        dst_f = os.path.join(ARTIFACT_DIR, f)
+        if os.path.exists(src_f):
+            import shutil
+            shutil.copy2(src_f, dst_f)
+            print(f"Copied to artifacts: {dst_f}")
 
 print("\nDone! All figures successfully generated and deployed.")

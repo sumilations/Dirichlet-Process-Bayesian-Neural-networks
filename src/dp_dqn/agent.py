@@ -16,11 +16,11 @@ class DPDQNAgent:
     """Unified Dirichlet Process Deep Q-Network Agent.
 
     Features:
-    - Non-parametric data-space Dirichlet Process prior F ~ DP(alpha, F_0).
-    - Modular base measures F_0 (Cart-Pole, Deep Sea, Gaussian, or custom).
-    - Single neural network with Layer Normalization.
-    - Episodic Thompson Sampling via Target Warm-Start.
-    - Online stick-breaking importance-weighted TD learning.
+    - Nonparametric data-space Dirichlet Process prior F ~ DP(alpha, F_0) (Eq. 2 & 3).
+    - Modular base measures F_0 (DeepSea DAG/Uniform, RiverSwim, Deceptive Chain, Gaussian).
+    - Single living neural network with Layer Normalization (no multi-network ensembles).
+    - Episodic Thompson Sampling via Target Warm-Start (Algorithm 2).
+    - Conjugate Dirichlet Process posterior sampling via Stick-Breaking (Eq. 4 & 5).
     """
 
     def __init__(
@@ -147,8 +147,10 @@ class DPDQNAgent:
         n_stat = self.cumulative_info if getattr(self.config, "use_td_info_gain_decay", False) else None
 
         if getattr(self.config, "sample_once_per_episode", True):
-            # Algorithm 2 (Paper): Prior transitions sampled ONCE at episode reset;
-            # fresh empirical mini-batches drawn at EACH warmstart step w = 1..W.
+            # Algorithm 2 (Paper): Episodic Thompson Sampling via DP Posterior
+            # Line 3: Sample prior hypothesis transitions \tilde{D} ~ F_0 and weights q^(0) ~ GEM(\alpha) (Eq. 5)
+            # Lines 5-7: At each warmstart step w = 1..W, draw fresh empirical mini-batch D_n
+            # and optimize target parameters on the mixed posterior sample (Eq. 4 & Eq. 7).
             K_prior = max(8, int(getattr(self.config, "vm_prior_multiplier", 10.0) * self.config.alpha))
             syn_s, syn_a, syn_r, syn_sn, syn_d = self.base_measure.sample(K_prior, self.rng)
 

@@ -11,9 +11,12 @@ import matplotlib.pyplot as plt
 # ------------------------------------------------------------------------------
 # Paths & Configuration
 # ------------------------------------------------------------------------------
-BASE_DIR = "/Users/sumitvashishtha/Desktop/DP-BNNs"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 RESULTS_DIR = os.path.join(BASE_DIR, "results_deepsea")
-ARTIFACT_DIR = "/Users/sumitvashishtha/.gemini/antigravity/brain/f3853f6f-e164-4df3-ac40-df17bbc1fc86"
+ARTIFACT_DIR = os.environ.get(
+    "ARTIFACT_DIR",
+    "/Users/sumitvashishtha/.gemini/antigravity/brain/f3853f6f-e164-4df3-ac40-df17bbc1fc86",
+)
 
 SEEDS = list(range(42, 52))  # 10 independent seeds (42 to 51)
 EPISODES = 10000
@@ -480,28 +483,92 @@ def plot_figure_3(conditions, export_dict):
     fig.savefig(PDF_OUT_PATH, bbox_inches="tight")
     fig.savefig(PNG_SPACE_PATH, bbox_inches="tight", dpi=300)
 
-    # Also copy to artifact directory for display in chat
-    artifact_png = os.path.join(ARTIFACT_DIR, "Figure_3_TMLR.png")
-    fig.savefig(artifact_png, bbox_inches="tight", dpi=300)
-    artifact_space_png = os.path.join(ARTIFACT_DIR, "Figure 3_TMLR.png")
-    fig.savefig(artifact_space_png, bbox_inches="tight", dpi=300)
+    # Also copy to artifact directory for display in chat if available
+    if os.path.isdir(ARTIFACT_DIR):
+        artifact_png = os.path.join(ARTIFACT_DIR, "Figure_3_TMLR.png")
+        fig.savefig(artifact_png, bbox_inches="tight", dpi=300)
+        artifact_space_png = os.path.join(ARTIFACT_DIR, "Figure 3_TMLR.png")
+        fig.savefig(artifact_space_png, bbox_inches="tight", dpi=300)
 
     plt.close(fig)
     print(f"[Plotting] Figure 3 saved to:")
     print(f"  - {PNG_OUT_PATH}")
     print(f"  - {PDF_OUT_PATH}")
     print(f"  - {PNG_SPACE_PATH}")
-    print(f"  - {artifact_png}")
 
 # ------------------------------------------------------------------------------
 # Main Execution
 # ------------------------------------------------------------------------------
 if __name__ == "__main__":
-    print("=== Processing & Exporting Figure 3 Data (TMLR) ===")
-    conditions = load_all_runs()
-    export_dict = process_data(conditions)
+    import argparse
+    parser = argparse.ArgumentParser(description="Generate Figure 3 for TMLR.")
+    parser.add_argument("--recompute", action="store_true", help="Recompute from raw results_deepsea directory if available.")
+    parser.add_argument("--cached", action="store_true", default=True, help="Load directly from verified Figure_3_TMLR_data.json (default).")
+    args, _ = parser.parse_known_args()
+
+    default_conditions = [
+        {
+            "id": "dp_dqn_dag",
+            "name": r"DP-DQN (Downward DAG $F_0$, $\alpha=10$)",
+            "short_name": "DP-DQN (DAG Prior)",
+            "table_name": "DP-DQN (Downward DAG F0, α=10)",
+            "architecture": "Single MLP-20",
+            "color": "#00897B",      # Dark Teal
+            "line_style": "-",
+        },
+        {
+            "id": "boot_dqn_rp",
+            "name": "BootDQN + Rand Priors (Osband 2018)",
+            "short_name": "BootDQN + RP (20 Heads)",
+            "table_name": "BootDQN + Rand Priors (20 Heads)",
+            "architecture": "20-Head MLP-20",
+            "color": "#FF8C00",      # Deep Amber/Orange
+            "line_style": "-",
+        },
+        {
+            "id": "dp_dqn_std",
+            "name": r"DP-DQN (Standard $F_0$, $\alpha=10$)",
+            "short_name": "DP-DQN (Standard F0)",
+            "table_name": "DP-DQN (Standard F0, α=10)",
+            "architecture": "Single MLP-20",
+            "color": "#1E88E5",      # Royal Blue
+            "line_style": "-",
+        },
+        {
+            "id": "bdqn",
+            "name": "Bayesian Deep Q-Network (BLR)",
+            "short_name": "BDQN (BLR)",
+            "table_name": "Bayesian Deep Q-Network (BLR)",
+            "architecture": "Single MLP-20",
+            "color": "#8E24AA",      # Purple
+            "line_style": "--",
+        },
+        {
+            "id": "dp_dqn_bootstrap_limit",
+            "name": r"DP-DQN Bootstrap Limit ($\alpha=10^{-9}$)",
+            "short_name": "Bootstrap Limit (α=10⁻⁹)",
+            "table_name": "DP-DQN Bootstrap Limit (α=10⁻⁹)",
+            "architecture": "Single MLP-20",
+            "color": "#E53935",      # Red
+            "line_style": ":",
+        },
+    ]
+
+    if args.recompute and os.path.exists(RESULTS_DIR):
+        print("=== Processing & Exporting Figure 3 Data from Raw Logs (TMLR) ===")
+        conditions = load_all_runs()
+        export_dict = process_data(conditions)
+    elif os.path.exists(DATA_JSON_PATH):
+        print(f"=== Rendering Figure 3 from Verified Benchmark Data ({DATA_JSON_PATH}) ===")
+        with open(DATA_JSON_PATH, "r") as fp:
+            export_dict = json.load(fp)
+        conditions = default_conditions
+    else:
+        raise FileNotFoundError(f"Neither {RESULTS_DIR} nor {DATA_JSON_PATH} found.")
+
     plot_figure_3(conditions, export_dict)
-    # Also save a copy of this plotting script to ARTIFACT_DIR for backup
-    shutil.copy(__file__, os.path.join(ARTIFACT_DIR, "plot_Figure_3_TMLR.py"))
-    print(f"[Script Copy] Copied generator script to: {os.path.join(ARTIFACT_DIR, 'plot_Figure_3_TMLR.py')}")
+
+    if os.path.isdir(ARTIFACT_DIR):
+        shutil.copy(__file__, os.path.join(ARTIFACT_DIR, "plot_Figure_3_TMLR.py"))
+        print(f"[Script Copy] Copied generator script to: {os.path.join(ARTIFACT_DIR, 'plot_Figure_3_TMLR.py')}")
     print("=== Finished successfully! ===")

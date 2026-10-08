@@ -161,9 +161,9 @@ class BayesianBetaAlphaPrior:
 
 
 class SethuramanStickBreakingSampler:
-    """Draws posterior samples F ~ DP(alpha + B, (alpha F_0 + sum delta_i) / (alpha + B))
+    """Draws posterior samples F ~ DP(alpha + B, (alpha F_0 + sum delta_i) / (alpha + B)) (Eq. 4).
 
-    Uses Sethuraman's (1994) stick-breaking construction:
+    Implements Sethuraman's (1994) stick-breaking representation GEM(alpha) (Eq. 5):
         V_k ~ Beta(1, alpha + B)
         q_k = V_k * prod_{j < k} (1 - V_j)
     """

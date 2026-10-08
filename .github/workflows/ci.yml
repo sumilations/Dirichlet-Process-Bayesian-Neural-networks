@@ -1,0 +1,41 @@
+name: Reproducibility CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-reproducibility:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.9', '3.10', '3.11', '3.12']
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+        cache: 'pip'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run Turnkey Reproducibility Verification Suite
+      run: |
+        python test_reproducibility_suite.py
+
+    - name: Verify Figure 2 Generation (Cached Mode)
+      run: |
+        python plot_Figure_2_TMLR.py --cached
+
+    - name: Verify Figure 3 Generation (Cached Mode)
+      run: |
+        python plot_Figure_3_TMLR.py --cached
