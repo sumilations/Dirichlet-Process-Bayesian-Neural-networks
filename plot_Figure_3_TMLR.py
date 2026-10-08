@@ -365,7 +365,6 @@ def plot_figure_3(conditions, export_dict):
 
     bp = ax2.boxplot(
         box_data,
-        labels=box_labels,
         patch_artist=True,
         showmeans=True,
         meanprops={"marker": "^", "markerfacecolor": "white", "markeredgecolor": "black", "markersize": 7},
@@ -374,6 +373,9 @@ def plot_figure_3(conditions, export_dict):
         whiskerprops={"linewidth": 1.2},
         capprops={"linewidth": 1.2},
     )
+    ax2.set_xticks(range(1, len(box_labels) + 1))
+    ax2.set_xticklabels(box_labels)
+
 
     for patch, color in zip(bp["boxes"], box_colors):
         patch.set_facecolor(color)
