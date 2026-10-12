@@ -18,6 +18,7 @@ DP-PINNs/
 *.tar.gz
 *.mp4
 *.gif
+!deepsea50_masterpiece_preview.gif
 *.npz
 *.csv
 *.data

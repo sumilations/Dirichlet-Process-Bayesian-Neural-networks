@@ -101,7 +101,7 @@ fit_coeff = right_data["fit_coefficient"]
 n_dense = np.linspace(10, 50, 200)
 fit_curve = fit_coeff * (n_dense ** slope)
 
-# Osband et al. (2013) tabular bound: O(N^3)
+# Osband et al. (2018) BootDQN-RP empirical scaling: O(N^3)
 c_osband = solved_means[0] / (n_vals[0] ** 3)
 osband_curve = c_osband * (n_dense ** 3)
 
@@ -143,7 +143,7 @@ ax1.fill_between(COMMON_EPS,
 ax1.plot(COMMON_EPS, bdqn_mean, label="Bayesian Deep Q-Network (BLR)",
          color=C_BDQN, linewidth=1.8, linestyle=":", zorder=2)
 
-ax1.plot(COMMON_EPS, bootstrap_limit_mean, label=r"DP Bootstrap Limit ($\alpha \to 0$)",
+ax1.plot(COMMON_EPS, bootstrap_limit_mean, label=r"DP-DQN ($\alpha \to 0$)",
          color=C_LIMIT, linewidth=1.8, linestyle="-.", zorder=2)
 
 ax1.plot(COMMON_EPS, dqn_mean, label=r"DQN ($\epsilon$-greedy, linear regret)",
@@ -162,7 +162,7 @@ ax1.legend(loc="upper left", frameon=True, framealpha=0.92, edgecolor="#CCCCCC")
 # ------------------------------------------------------------------------------
 # Right Panel: Scalability Suite across 30 Grid Sizes (N=10 to 50, 180 Runs)
 # ------------------------------------------------------------------------------
-# 1. DP-DQN Empirical Data points
+# 1. DP-DQN Empirical Data points (mean +/- 1 std)
 ax2.errorbar(n_vals, solved_means, yerr=solved_stds, fmt="o", color=C_DP_MAIN,
              ecolor=C_DP_MAIN, elinewidth=1.4, capsize=3, capthick=1.2,
              markersize=5.5, label="DP-DQN (Uniform Base Measure, 180 runs)", zorder=6)
@@ -171,9 +171,9 @@ ax2.errorbar(n_vals, solved_means, yerr=solved_stds, fmt="o", color=C_DP_MAIN,
 ax2.plot(n_dense, fit_curve, color=C_DP_MAIN, linewidth=2.4,
          label=rf"DP-DQN Empirical Fit: $\mathcal{{O}}(N^{{{slope:.2f}}})$", zorder=5)
 
-# 3. Osband et al. (2013) Tabular Bound O(N^3)
+# 3. Osband et al. (2018) BootDQN-RP Empirical Scaling O(N^3)
 ax2.plot(n_dense, osband_curve, color=C_OSBAND, linewidth=2.0, linestyle="--",
-         label=r"Tabular Posterior Sampling: $\mathcal{O}(N^3)$ (Osband 2013)", zorder=4)
+         label=r"BootDQN-RP: $\mathcal{O}(N^3)$ (Osband et al., 2018)", zorder=4)
 
 # 4. Dithering / Epsilon-Greedy Omega(2^N)
 ax2.plot(dither_dense, dither_curve, color=C_DQN, linewidth=2.0, linestyle=":",
@@ -197,12 +197,6 @@ ax2.yaxis.set_minor_formatter(NullFormatter())
 ax2.grid(True, which="both", linestyle="--", alpha=0.45)
 ax2.legend(loc="upper left", frameon=True, framealpha=0.92, edgecolor="#CCCCCC")
 
-# Callout annotation on Right Panel
-ax2.annotate(rf"$\mathbf{{Sub-quadratic\ Scaling:}}\ \mathcal{{O}}(N^{{{slope:.2f}}})$" + "\n" + r"$N=50$ solved in $2{,}066$ eps" + "\n" + r"(Zero coordinate bias, uniform prior)",
-             xy=(36, fit_coeff * (36 ** slope)), xytext=(28, 160),
-             arrowprops=dict(facecolor=C_DP_MAIN, edgecolor=C_DP_MAIN, arrowstyle="->", lw=1.6),
-             bbox=dict(boxstyle="round,pad=0.45", fc="#E0F2F1", ec=C_DP_MAIN, lw=1.2),
-             fontsize=9.0, fontweight="semibold", color="#004D40")
 
 plt.tight_layout(pad=2.2)
 

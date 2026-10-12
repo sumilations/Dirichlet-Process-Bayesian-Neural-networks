@@ -4,10 +4,20 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/)
 [![Reproducibility CI](https://github.com/sumilations/Dirichlet-Process-Bayesian-Neural-networks/actions/workflows/ci.yml/badge.svg)](https://github.com/sumilations/Dirichlet-Process-Bayesian-Neural-networks/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Presentation Video](https://img.shields.io/badge/YouTube-Watch%20Presentation-red.svg?logo=youtube)](https://youtu.be/YOUR_YOUTUBE_LINK)
 
 Official implementation and reproducibility suite for the paper:  
 **"Bayesian Neural Networks via Dirichlet Process Priors on the Data-Generating Distribution for Randomized Value Functions in Deep Reinforcement Learning"**  
 *Transactions on Machine Learning Research (TMLR)*.
+
+<p align="center">
+  <img src="deepsea50_masterpiece_preview.gif" alt="DeepSea-50 Exploration Dynamics" width="100%" />
+</p>
+<p align="center">
+  <em><b>DeepSea-50 Exploration Dynamics:</b> Vanilla DQN collapses into local dithering at the left boundary, whereas DP-DQN maintains temporally coordinated stochastic optimism to discover and solve the $N=50$ grid ($2^{50} \approx 1.13 \times 10^{15}$ state-action paths) using only a single living neural network.</em>
+  <br>
+  <b><a href="https://youtu.be/YOUR_YOUTUBE_LINK">▶ Watch Full 1080p Video Presentation on YouTube</a></b>
+</p>
 
 ---
 
